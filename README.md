@@ -33,13 +33,13 @@ vault {
 ```
 
 #### **Configuring Nomad to Read StrongDM Token from Vault**
-The `SDM_RELAY_TOKEN` is a required environment variable for the StrongDM container.  The `task` stanza must include a `template` block that specifies where to read the token from in Vault.  Below the path to the target token is stored in, `secret/path/to/strongdm/gateways/strongdm_gw_00_simulpong`.  **Note** to simplify the access patterns, `strongdm/gateways/NAME` the KV store is organized in the following heirarchy: `application` -> `gateways` -> `gateway NAME`. 
+The `SDM_RELAY_TOKEN` is a required environment variable for the StrongDM container.  The `task` stanza must include a `template` block that specifies where to read the token from in Vault.  Below the path to the target token is stored in, `PATH_TO/strongdm/gateways/GATEWAY_NAME`.  **Note** to simplify the access patterns, `strongdm/gateways/GATEWAY_NAME` the KV store is organized in the following heirarchy: `application` -> `gateways` -> `gateway GATEWAY_NAME`. 
 
 ```
       template {
 
         data = <<EOD
-SDM_RELAY_TOKEN={{ with secret "secret/path/to/strongdm/gateways/strongdm_gw_00_simulpong" }}{{ .Data.SDM_RELAY_TOKEN}}{{ end}}
+SDM_RELAY_TOKEN={{ with secret "PATH_TO/strongdm/gateways/GATEWAY_NAME" }}{{ .Data.SDM_RELAY_TOKEN}}{{ end}}
 EOD
 
         destination = "secrets/file.env"
