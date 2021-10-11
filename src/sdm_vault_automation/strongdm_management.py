@@ -64,7 +64,7 @@ def get_resources_by_names(names):
     roles = [i for i in get_client().resources.list('')]
     results = []
     for i in roles:
-        if i.name == names:
+        if i.name in names:
             results.append(i)
     return results
 
