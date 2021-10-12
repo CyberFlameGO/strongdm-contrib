@@ -7,7 +7,7 @@ data_files = [(d, [os.path.join(d, f) for f in files])
 
 setup(name='sdm_vault_automation',
       version='1.0',
-      description='Read and Forward SDM Audit Logs to ElastiSearh',
+      description='Framework for SDM Automation and Read and Forward SDM Audit Logs to ElastiSearh',
       author='Adam Pridgen',
       author_email='apridgen@roblox.com',
       packages=find_packages('src'),
