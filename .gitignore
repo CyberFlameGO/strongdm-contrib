@@ -1,0 +1,5 @@
+cert_ca*
+*.pyc
+sdm-env/*
+*.pyc
+.vscode/*

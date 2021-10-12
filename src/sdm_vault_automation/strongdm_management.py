@@ -35,6 +35,7 @@ def get_role_by_name(name):
             return i
     return None
 
+
 def get_roles(name):
     '''
     get first object by name
@@ -42,12 +43,14 @@ def get_roles(name):
     roles = [i for i in get_client().roles.list('')]
     return roles
 
+
 def get_resources(name):
     '''
     get first object by name
     '''
     roles = [i for i in get_client().resources.list('')]
     return roles
+
 
 def get_roles_by_tags(tags: dict):
     '''
